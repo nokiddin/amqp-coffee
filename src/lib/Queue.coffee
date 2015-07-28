@@ -51,6 +51,10 @@ class Queue
       cb = queueName
       queueName = @queueOptions.queue
 
+    # get the name of the exchange. 
+    if typeof exchange is 'object' and typeof exchange.exchangeOptions is 'object'
+      exchange = exchange.exchangeOptions.exchange
+
     queueBindOptions = {
       queue:      queueName
       exchange:   exchange
@@ -113,3 +117,5 @@ class Queue
     @taskPush methods.queueDelete, queueDeleteArgs, methods.queueDeleteOk, cb
 
 module.exports = Queue
+
+# vim: filetype=coffee:et:ts=2:sts=2:sw=2:
