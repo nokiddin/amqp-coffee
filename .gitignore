@@ -3,3 +3,5 @@ node_modules
 /bin/
 /coverage.html
 /coverage/
+bin/
+coverage/
